@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #04647d;
+  --color-primary-container: #9ae1ff;
+  --color-primary-dim: #00576e;
+  --color-secondary: #006287;
+  --color-tertiary: #006a2e; /* WhatsApp Green logic from docs */
+  --color-accent: #25D366; /* Actual WhatsApp Green */
+  
+  --color-background: #eff7ff;
+  --color-surface: #eff7ff;
+  --color-surface-container: #d1ecff;
+  --color-surface-container-low: #e3f3ff;
+  --color-surface-container-lowest: #ffffff;
+  
+  --color-on-background: #003348;
+  --color-on-surface: #003348;
+  --color-on-primary: #e3f6ff;
+
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility glass {
+  background-color: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(12px);
+}
