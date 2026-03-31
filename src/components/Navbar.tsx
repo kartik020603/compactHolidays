@@ -63,7 +63,7 @@ export default function Navbar() {
             </div>
 
             <Link to="/about" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">About</Link>
-            <Link to="/reviews" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Reviews</Link>
+            <Link to="/reviews" className="px-6 py-2 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-bold rounded-xl border border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-sm active:scale-95">Reviews</Link>
           </div>
 
           {/* Mobile Menu Button */}

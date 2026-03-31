@@ -231,7 +231,10 @@ export default function Home() {
                     <Star className="w-16 h-16 text-[#fbc02d] fill-[#fbc02d]" />
                     <h2 className="text-5xl md:text-7xl font-bold text-[var(--color-primary)] tracking-tighter leading-[0.9]">Loved by <br />Elite Travelers.</h2>
                     <p className="text-2xl text-[var(--color-on-surface-variant)] leading-loose font-serif italic italic font-serif">"From Delhi to Dubai, our guests share stories of seamless horizons."</p>
-                    <Link to="/reviews" className="inline-flex items-center gap-4 text-xl font-bold text-[var(--color-primary)] hover:gap-6 transition-all">Read 500+ Reviews <ArrowRight /></Link>
+                    <Link to="/reviews" className="inline-flex items-center gap-6 px-10 py-5 bg-[var(--color-primary)] text-white text-xl font-bold rounded-[2rem] shadow-2xl hover:shadow-[0_20px_50px_-12px_rgba(0,51,72,0.3)] hover:-translate-y-1 transition-all group">
+                      Read 500+ Reviews 
+                      <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                    </Link>
                   </div>
                </FadeIn>
             </div>
