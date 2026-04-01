@@ -18,7 +18,7 @@ export default function AboutUs() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl md:text-3xl text-[var(--color-on-surface-variant)] max-w-3xl mx-auto font-light leading-relaxed font-serif italic">
-              "We don't just book tickets; we design the bridge between your doorstep and the world's most breathtaking horizons."
+              "We don't just book tickets; we build relations. Aapka apna travel partner guiding you to the world's most breathtaking horizons."
             </p>
           </FadeIn>
         </div>
@@ -31,7 +31,7 @@ export default function AboutUs() {
              <FadeIn direction="right">
                 <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-primary)] mb-10 leading-tight tracking-tight">10+ Years of <br />Ticketing Expertise</h2>
                 <div className="space-y-8 text-xl text-[var(--color-on-surface-variant)] leading-loose font-light">
-                   <p>Based in the architectural heart of India—Agra—Compact Holidays was founded on a singular principle: <span className="font-bold text-[var(--color-primary)] opacity-70">Travel should be high-fidelity, not high-stress.</span></p>
+                   <p>Based in the architectural heart of India—Agra—Compact Holidays was founded on a singular principle: <span className="font-bold text-[var(--color-primary)] opacity-70">Travel should be a joy, not a headache. Apno jaisa bharosa, aur premium service.</span></p>
                    <p>What started as a specialized railway ticketing desk has evolved into a full-spectrum travel concierge, serving thousands of global travelers who seek precision in their journeys.</p>
                    <div className="h-1 w-24 bg-[var(--color-accent)]" />
                 </div>

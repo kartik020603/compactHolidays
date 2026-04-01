@@ -28,7 +28,7 @@ export default function AirlineHelicopter() {
           </FadeIn>
           <FadeIn direction="right" delay={0.6}>
             <p className="text-lg md:text-2xl text-white/80 max-w-xl font-light leading-relaxed mb-12">
-              From executive class international voyages to private helicopter charters for Himalayan pilgrimages. We manage the altitude.
+              Duniya ki kisi bhi kone ki flight ho ya private helicopter, humaari premium service hamesha aapke saath hai. We manage the altitude.
             </p>
           </FadeIn>
         </div>
@@ -43,7 +43,7 @@ export default function AirlineHelicopter() {
                  <Plane className="w-16 h-16 text-[var(--color-primary)] mb-10" />
                  <h3 className="text-4xl font-bold text-[var(--color-primary)] mb-6 tracking-tight">International & Domestic Flights</h3>
                  <p className="text-xl text-[var(--color-on-surface-variant)] mb-10 leading-loose text-justify">
-                    Access exclusive inventory and negotiated fares across GDS systems. We specialize in complex multi-city itineraries and premium cabin upgrades that web portals often miss.
+                    Flight bookings mein no tension. Access exclusive inventory and negotiated fares. What makes us special? We secure premium cabin upgrades that regular web portals often miss, giving you real VIP treatment.
                  </p>
                  <ul className="space-y-4">
                     {['Corporate Flight Packs', 'Group Air Charters', 'Tiered 24/7 Monitoring'].map((item, i) => (

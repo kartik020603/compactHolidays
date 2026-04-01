@@ -8,40 +8,39 @@ import { Helmet } from 'react-helmet-async';
 import heroGoa from '../assets/generated/home_hero_goa_1774982106174.png';
 import heroTrain from '../assets/generated/home_hero_train_1774982124786.png';
 import heroFlight from '../assets/generated/home_hero_flight_1774982142469.png';
-import heroFrance from '../assets/generated/home_hero_france_1774982162545.png';
 
 const HERO_IMAGES = [
   {
-    url: heroGoa,
-    title: "Bespoke Goa Escapes",
-    subtitle: "Tropical luxury curated for the discerning traveler."
+    url: "https://images.unsplash.com/photo-1544320641-5a5061b4db53?auto=format&fit=crop&w=1200&q=80",
+    title: "Expert Visa Services",
+    subtitle: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai."
   },
   {
     url: heroTrain,
-    title: "Elite Rail Journeys",
-    subtitle: "Authorized precision ticketing for India's finest tracks."
+    title: "Assured Rail Journeys",
+    subtitle: "Aapki confirmed seat ki guarantee, humari zimmedari."
   },
   {
     url: heroFlight,
-    title: "Sky-High Excellence",
-    subtitle: "First-class logistics for your global horizons."
+    title: "Global Horizons",
+    subtitle: "Duniya ki kisi bhi kone ki flight, humare saath book karein."
   },
   {
-    url: heroFrance,
-    title: "European Grandeur",
-    subtitle: "Immersive tours across the heart of France."
+    url: heroGoa,
+    title: "Apna Sa Safar",
+    subtitle: "Memorable holidays curated with care and deep trust (apnapan)."
   }
 ];
 
 const SERVICES = [
-  { title: "Train Booking", icon: Train, path: "/train-booking", desc: "Express Tatkal & Luxury Rail reservations with expert confirmation hunters." },
-  { title: "Tour & Travel", icon: Map, path: "/tour-travel", desc: "Agra Signature Tours, Golden Triangle, & Bespoke Global Itineraries." },
-  { title: "Cabs & Buses", icon: Car, path: "/cabs-buses", desc: "Elite intercity chauffeurs and luxury bus charters for group excellence." },
-  { title: "Forex Exchange", icon: Coins, path: "/forex", desc: "Instant currency exchange with the best rates in Agra. Secure and reliable." },
-  { title: "Airline Tickets", icon: Plane, path: "/airline-helicopter", desc: "Global flight bookings, private charters, and helicopter expeditions." },
+  { title: "Passport & Visa", icon: Landmark, path: "/passport-visa", desc: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai. Fast-track assistance." },
+  { title: "Train Booking", icon: Train, path: "/train-booking", desc: "Aapki confirmed seat ki guarantee, humari zimmedari. Express Tatkal & Luxury reservations." },
+  { title: "Tour & Travel", icon: Map, path: "/tour-travel", desc: "Apno ke saath banayein yaadgaar safar. Agra Signature Tours & Bespoke Global Itineraries." },
+  { title: "Cabs & Buses", icon: Car, path: "/cabs-buses", desc: "Safar suhana, aur kiraya bhi apna sa. Elite intercity chauffeurs and luxury bus charters." },
+  { title: "Forex Exchange", icon: Coins, path: "/forex", desc: "Sahi rates pe instant currency exchange. Bharose ka doosra naam Compact Holidays." },
+  { title: "Airline Tickets", icon: Plane, path: "/airline-helicopter", desc: "First-class flight bookings, private charters, and helicopter expeditions." },
+  { title: "Travel Insurance", icon: HeartPulse, path: "/travel-insurance", desc: "Medical emergencies hone par humesha aapke sath. Comprehensive protection." },
   { title: "Cruise Services", icon: Ship, path: "/cruise", desc: "Elite maritime voyages from the Arabian sea to the Caribbean horizons." },
-  { title: "Travel Insurance", icon: HeartPulse, path: "/travel-insurance", desc: "Comprehensive protection for medical emergencies and trip cancellations." },
-  { title: "Passport & Visa", icon: Landmark, path: "/passport-visa", desc: "Error-free documentation & fast-track embassy assistance." },
 ];
 
 export default function Home() {
@@ -154,11 +153,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Editorial Style */}
-      <section className="py-40 bg-[var(--color-primary-container)]/20 rounded-[5rem] mx-4 lg:mx-8">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      {/* Why Choose Us - Editorial Style & SEO */}
+      <section className="py-40 bg-[var(--color-primary-container)]/20 rounded-[5rem] mx-4 lg:mx-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-accent)]/5 rounded-full blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           <FadeIn>
-            <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-primary)] mb-24 tracking-tighter">Defining the Compact <span className="italic font-serif">Excellence</span></h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter">Your Trusted <span className="italic font-serif">Travel Partner</span></h2>
+            <p className="max-w-4xl mx-auto text-lg text-[var(--color-on-surface-variant)] mb-24 leading-relaxed font-medium">As the <strong className="text-[var(--color-primary)]">best passport applying services in Agra</strong> and the leading provider of <strong className="text-[var(--color-primary)]">visa applying services in Agra</strong>, Compact Holidays believes in building a relationship of thick trust—apnapan—with every client. Be it securing the most sought-after documents smoothly or delivering the <strong className="text-[var(--color-primary)]">best train booking services in Agra</strong>, we treat your journey like our own.</p>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
             {[

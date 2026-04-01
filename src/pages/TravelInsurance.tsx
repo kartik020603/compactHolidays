@@ -28,7 +28,7 @@ export default function TravelInsurance() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-               Comprehensive global travel insurance coverage for medical emergencies, trip cancellations, and lost logistics. Your invisible safety net.
+               Comprehensive travel insurance coverage. Anjaan sheher mein apno sa sahara. Your invisible safety net for medical emergencies and trip cancellations.
             </p>
           </FadeIn>
         </div>
@@ -69,8 +69,8 @@ export default function TravelInsurance() {
         <div className="flex flex-col md:flex-row gap-16 items-center">
            <div className="md:w-1/2">
               <FadeIn direction="right">
-                 <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter italic font-serif">A Shield Across <br /><span className="text-[var(--color-accent)]">Boundaries.</span></h2>
-                 <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose mb-10">We believe travel should be about horizons, not hazards. Our localized Agra concierge manages the complex claim settlement process so you can focus on recovery and reunion.</p>
+                 <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter italic font-serif">Har Safar Mein <br /><span className="text-[var(--color-accent)]">Apnaपन.</span></h2>
+                 <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose mb-10">We believe travel should be about horizons, not hazards. What makes us special? Our localized Agra concierge manages the complex claim settlement process for you.</p>
                  <div className="grid grid-cols-2 gap-8">
                     {[
                        { val: '24/7', label: 'Assistance' },

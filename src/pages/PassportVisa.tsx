@@ -23,7 +23,7 @@ export default function PassportVisa() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-lg md:text-2xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-              Navigating international borders shouldn't be a hurdle. We handle the complexity so you can focus on the journey ahead.
+              Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai. We handle the complex documentation so you can focus on packing. Aapka apna travel partner.
             </p>
           </FadeIn>
         </div>
@@ -36,7 +36,7 @@ export default function PassportVisa() {
               <div className="lg:w-1/2">
                 <FadeIn direction="right">
                    <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-8 leading-tight">Expert Consulting for <span className="text-[var(--color-secondary)]">155+ Countries</span></h2>
-                   <p className="text-xl text-[var(--color-on-surface-variant)] mb-10 leading-loose italic font-serif">"Our mission is to translate complex embassy bureaucracy into a simple check-list for you."</p>
+                   <p className="text-xl text-[var(--color-on-surface-variant)] mb-10 leading-loose italic font-serif">"Our mission is simple: provide the <strong className="text-[var(--color-primary)]">best passport applying services in Agra</strong>. Embassy ke chakkar chodiye, files hum par chhodiye. Humare 10 saal ke experience pe bharosa rakhein."</p>
                    <div className="grid grid-cols-2 gap-8 pt-6">
                       <div>
                         <h4 className="text-4xl font-bold text-[var(--color-accent)] mb-2">98%</h4>
@@ -86,7 +86,8 @@ export default function PassportVisa() {
           <div className="md:w-1/2">
             <FadeIn direction="right">
               <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter italic font-serif">Unlocking Every <span className="text-[var(--color-accent)]">Coordinate.</span></h2>
-              <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose">From Schengen explorations to US business transitions, our dossier precision ensures your focus remains on the destination, not the documentation.</p>
+              <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose mb-6">From Schengen explorations to US business transitions, our dossier precision ensures your focus remains on the destination, not the documentation.</p>
+              <p className="text-xl text-[var(--color-primary)] font-bold italic border-l-4 border-[var(--color-accent)] pl-4">What makes us special? Jo files aur passports reject ho jaate hain, humari expert team unhe clear karwane mein mahir hai. As the premier provider of <strong className="text-[var(--color-primary)]">visa applying services in Agra</strong>, we handle the impossible.</p>
             </FadeIn>
           </div>
           <div className="md:w-1/2 flex gap-6">
@@ -161,7 +162,7 @@ export default function PassportVisa() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <Clock className="w-16 h-16 text-[var(--color-accent)] mb-8" />
                   <h3 className="text-4xl font-bold mb-6 tracking-tight">Need it Urgently?</h3>
-                  <p className="text-xl text-white/70 mb-10 leading-relaxed">Our "Fast-Track" executive channel cuts processing time by 40% for business emergencies.</p>
+                  <p className="text-xl text-white/70 mb-10 leading-relaxed">Tatkal visa ya urgent passport? Tension mat lijiye. Our executive channel cuts processing time down significantly for emergencies.</p>
                   <a href="https://wa.me/918410617268" className="inline-block px-12 py-6 bg-white text-[var(--color-primary)] font-bold rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-xl">Contact Visa Concierge</a>
                </div>
             </FadeIn>

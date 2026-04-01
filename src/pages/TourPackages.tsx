@@ -11,17 +11,17 @@ export default function TourPackages() {
           animate={{ y: 0, opacity: 1 }}
           className="relative z-10 text-center px-4 max-w-4xl pt-20"
         >
-          <span className="px-4 py-2 rounded-full glass text-white text-sm font-bold uppercase tracking-widest mb-6 inline-block">Curated Escapes</span>
+          <span className="px-4 py-2 rounded-full glass text-white text-sm font-bold uppercase tracking-widest mb-6 inline-block">Apno Waali Trips</span>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-md">Tour Packages</h1>
-          <p className="text-xl text-[var(--color-primary-container)]">Bespoke domestic and international itineraries designed for memories, not just sightseeing.</p>
+          <p className="text-xl text-[var(--color-primary-container)]">Bespoke itineraries designed for memories. Duniya ghumo, par apno jaisa bharose ke saath.</p>
         </motion.div>
       </section>
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-4">Trending Destinations</h2>
-            <p className="text-[var(--color-on-surface-variant)] text-lg">Hand-picked locations that are highly rated by our luxury travelers this season.</p>
+            <h2 className="text-4xl font-bold text-[var(--color-primary)] mb-4">Aapke Liye Khas Destinations</h2>
+            <p className="text-[var(--color-on-surface-variant)] text-lg">Hand-picked locations highly rated by our travelers. Humari speciality? Har trip ek smooth experience hoti hai.</p>
           </div>
           <a href="https://wa.me/918410617268" target="_blank" rel="noreferrer" className="px-8 py-4 bg-[var(--color-primary)] text-white font-bold rounded-xl hover:bg-[#00576e] transition-colors">
             Request Custom Safari

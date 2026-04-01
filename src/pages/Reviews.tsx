@@ -9,7 +9,8 @@ const REVIEWS = [
     text: "The best train booking experience I've had in 10 years. They got me a confirmed 2AC ticket for my family when everything was showing waitlisted on IRCTC. True professionals.",
     service: "Train Booking",
     rating: 5,
-    date: "March 2025"
+    date: "March 2025",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Priya Verma",
@@ -17,7 +18,8 @@ const REVIEWS = [
     text: "Used their passport service for my renewal. I was worried about the documents, but they sent a concierge to my house, handled everything, and I got my passport in 4 days! Amazing speed.",
     service: "Passport Assistance",
     rating: 5,
-    date: "February 2025"
+    date: "February 2025",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Rahul Khanna",
@@ -25,7 +27,8 @@ const REVIEWS = [
     text: "Booked the Same Day Agra Tour. The luxury cab was immaculate, and the guide provided by Compact Holidays was incredibly knowledgeable about the Taj Mahal's history. 10/10.",
     service: "Tour Packages",
     rating: 5,
-    date: "January 2025"
+    date: "January 2025",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Amit Patel",
@@ -33,7 +36,8 @@ const REVIEWS = [
     text: "Efficient forex exchange. The rates were better than the airport and the delivery was secure. Will definitely use them for my next international trip.",
     service: "Forex Exchange",
     rating: 5,
-    date: "March 2025"
+    date: "March 2025",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Sneha Gupta",
@@ -41,7 +45,8 @@ const REVIEWS = [
     text: "The cruise booking was seamless. They took care of the deck selection and all dietary requirements. A truly curated holiday as promised.",
     service: "Cruise Services",
     rating: 5,
-    date: "December 2024"
+    date: "December 2024",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Vikram Singh",
@@ -49,7 +54,8 @@ const REVIEWS = [
     text: "Fast visa processing for my US trip. The error-free documentation they prepared made the embassy interview very smooth. Highly recommend for international travel.",
     service: "Visa Services",
     rating: 5,
-    date: "January 2025"
+    date: "January 2025",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80"
   }
 ];
 
@@ -118,9 +124,13 @@ export default function Reviews() {
                        </p>
                        
                        <div className="flex items-center gap-6 border-t border-[var(--color-surface-container)] pt-8">
-                          <div className="w-16 h-16 bg-[var(--color-primary-container)] rounded-full flex items-center justify-center text-2xl font-bold text-[var(--color-primary)] shadow-inner">
-                             {review.name[0]}
-                          </div>
+                          {review.avatar ? (
+                             <img src={review.avatar} alt={review.name} className="w-16 h-16 rounded-full object-cover shadow-inner border-2 border-white" />
+                          ) : (
+                             <div className="w-16 h-16 bg-[var(--color-primary-container)] rounded-full flex items-center justify-center text-2xl font-bold text-[var(--color-primary)] shadow-inner">
+                                {review.name[0]}
+                             </div>
+                          )}
                           <div>
                              <h4 className="text-2xl font-bold text-[var(--color-primary)] tracking-tighter">{review.name}</h4>
                              <div className="flex items-center gap-2 text-sm text-[var(--color-on-surface-variant)] font-medium">

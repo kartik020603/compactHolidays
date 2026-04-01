@@ -23,7 +23,7 @@ export default function CabsBuses() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-lg md:text-2xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-              Experience the pinnacle of curated transit. From executive sedans for solo voyages to high-capacity luxury liners for grand expeditions.
+              Experience the pinnacle of curated transit. Safar suhana, aur kiraya bhi apna sa. From executive sedans to luxury liners, aapka comfort humari zimmedari.
             </p>
           </FadeIn>
         </div>
@@ -34,8 +34,8 @@ export default function CabsBuses() {
         <div className="flex flex-col lg:flex-row gap-20 items-start mb-32">
            <div className="lg:w-1/3">
              <FadeIn direction="right">
-               <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-8 leading-[1.1]">The Fleet That Matches Your Need</h2>
-               <p className="text-xl text-[var(--color-on-surface-variant)] mb-12 leading-loose">We redefine reliability through meticulously maintained vehicles and professional chauffeurs who prioritize your comfort.</p>
+               <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-8 leading-[1.1]">Aapki Zaroorat Ka Saathi</h2>
+               <p className="text-xl text-[var(--color-on-surface-variant)] mb-12 leading-loose">We redefine reliability with meticulously maintained vehicles. What's special about us? Humare drivers aapka khayal ek family member ki tarah rakhte hain.</p>
                <div className="bg-[var(--color-primary-container)] p-10 rounded-[3rem] shadow-sm transform -rotate-3 border border-white">
                   <h4 className="text-4xl font-bold text-[var(--color-primary)] mb-4">42-Point</h4>
                   <p className="text-sm font-bold text-[var(--color-primary-dim)] uppercase tracking-widest leading-loose">Daily Safety Checks for Every Single Voyage</p>

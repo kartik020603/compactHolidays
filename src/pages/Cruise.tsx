@@ -24,7 +24,7 @@ export default function Cruise() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-               Curated maritime voyages from the Arabian Sea to the Caribbean. Luxury staterooms and personalized shore excursions.
+               Curated maritime voyages from the Arabian Sea to the Caribbean. Samundar ki lehron pe, aapke apno ka safar. Luxury staterooms and personalized excursions.
             </p>
           </FadeIn>
         </div>
@@ -35,8 +35,8 @@ export default function Cruise() {
          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
             <div className="max-w-xl text-left">
                <FadeIn direction="right">
-                  <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-6 tracking-tight">Vessels of Distinction</h2>
-                  <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose italic font-serif">"We partner with the world's most elite liners to ensure your voyage is of unparalleled fidelity."</p>
+                  <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-6 tracking-tight">Khas Aapke Liye Vessels</h2>
+                  <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose">"We partner with the world's most elite liners. Humari khasiyat? Humein pata hai kaunsa cabin aapko best view dega."</p>
                </FadeIn>
             </div>
          </div>

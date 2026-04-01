@@ -27,7 +27,7 @@ export default function Forex() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-[var(--color-on-surface-variant)] max-w-2xl mx-auto font-light leading-relaxed mb-12">
-               Competitive real-time exchange rates and global travel card solutions with localized doorstep delivery across Agra.
+               Competitive real-time exchange rates. Sahi daam, aapke ghar tak. Global travel card solutions with localized doorstep delivery across Agra.
             </p>
           </FadeIn>
         </div>
@@ -92,8 +92,8 @@ export default function Forex() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
                <div className="max-w-2xl">
                   <FadeIn direction="right">
-                     <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter italic font-serif">Beat the Airport Rates.</h2>
-                     <p className="text-xl text-white/70 leading-relaxed font-light">Don't settle for highway robbery exchange fees. Our localized Agra desk provides bank-beating spreads for international departures.</p>
+                     <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter italic font-serif">Airport Rates Se Behtar.</h2>
+                     <p className="text-xl text-white/70 leading-relaxed font-light">Don't settle for high exchange fees. Our localized Agra desk provides bank-beating spreads so that aapka paisa sirf aapke kaam aaye.</p>
                   </FadeIn>
                </div>
                <FadeIn direction="left">

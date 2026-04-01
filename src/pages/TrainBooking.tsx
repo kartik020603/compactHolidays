@@ -29,7 +29,7 @@ export default function TrainBooking() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-[var(--color-primary-container)] max-w-2xl mx-auto font-light leading-relaxed mb-12">
-              Authorized precision ticketing for Vande Bharat, Rajdhani, and Shatabdi. From executive luxury to urgent Tatkal assistance.
+              Aapki confirmed seat ki guarantee, humari zimmedari. From luxury Vande Bharat to urgent Tatkal assistance, we are the <strong className="text-white">best train booking services in Agra</strong>.
             </p>
           </FadeIn>
         </div>
@@ -66,8 +66,8 @@ export default function TrainBooking() {
         <div className="flex flex-col md:flex-row gap-16 items-start">
            <div className="md:w-1/3">
              <FadeIn direction="right">
-               <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-6 leading-tight">Navigating the Rails with Expert Precision</h2>
-               <p className="text-lg text-[var(--color-on-surface-variant)] mb-10 leading-relaxed">We scan every available schedule instantly to find you the most efficient routes across the subcontinent.</p>
+               <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-6 leading-tight">Aapki Confirmed Seat, Humari Zimmedari</h2>
+               <p className="text-lg text-[var(--color-on-surface-variant)] mb-10 leading-relaxed">Waitlist ticket ho ya urgent Tatkal, humare paas har problem ka solution hai. What makes us special? We have dedicated confirmation hunters who secure those hard-to-get PNRs for you.</p>
                <div className="h-1 w-20 bg-[var(--color-accent)]" />
              </FadeIn>
            </div>
@@ -134,8 +134,8 @@ export default function TrainBooking() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <FadeIn direction="right">
-              <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter">Velocity Meets <br /><span className="text-[var(--color-accent)] italic font-serif">Luxury.</span></h2>
-              <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose mb-10">From the ultra-modern Vande Bharat Express to the regal heritage of the Palace on Wheels, we secure the most coveted seats in the Indian railway ecosystem.</p>
+              <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-8 tracking-tighter">Velocity Meets <br /><span className="text-[var(--color-accent)] italic font-serif">Aapka Apna Trust.</span></h2>
+              <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose mb-10">As the <strong className="text-[var(--color-primary)]">best train booking services in Agra</strong>, we handle the most complex IRCTC systems. Chahe family trip ho ya business travel, hum safely aur jaldi tickets deliver karte hain.</p>
               <div className="flex gap-4">
                  {[
                     { label: 'Speed', val: '160km/h' },

@@ -30,7 +30,7 @@ export default function TourTravel() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-[var(--color-primary-container)] max-w-3xl mx-auto font-light leading-relaxed mb-12">
-              Bespoke travel itineraries crafted for discovery, not just sightseeing. We don't book trips, we curate memories.
+              Bespoke travel itineraries crafted for discovery, not just sightseeing. Apno ke saath ek yaadgaar safar. We don't just book trips, we curate memories.
             </p>
           </FadeIn>
         </div>
@@ -41,8 +41,8 @@ export default function TourTravel() {
         <div className="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12 px-6">
           <div className="max-w-2xl">
             <FadeIn direction="right">
-               <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-6 tracking-tight leading-tight">Featured Destinations</h2>
-               <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose">Explore our hand-picked signature tours that define the cultural and visual landscape of Northern India.</p>
+               <h2 className="text-5xl font-bold text-[var(--color-primary)] mb-6 tracking-tight leading-tight">Aapke Liye Khas Destinations</h2>
+               <p className="text-xl text-[var(--color-on-surface-variant)] leading-loose">Explore our hand-picked signature tours that define the cultural landscape. What makes us special? We include deep local guides who treat you like family.</p>
             </FadeIn>
           </div>
           <FadeIn direction="left">

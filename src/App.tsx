@@ -14,6 +14,8 @@ import Cruise from './pages/Cruise';
 import TravelInsurance from './pages/TravelInsurance';
 import AboutUs from './pages/AboutUs';
 import Reviews from './pages/Reviews';
+import OurStories from './pages/OurStories';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/insurance" element={<TravelInsurance />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/stories" element={<OurStories />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </Layout>
       </Router>

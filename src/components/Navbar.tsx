@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Plane, Train, Map, Car, Landmark, Banknote, Ship, Shield, ChevronDown } from 'lucide-react';
 
 const OTHER_SERVICES = [
-  { name: 'Passport & Visa', path: '/passport-visa', icon: Landmark },
-  { name: 'Airline & Helicopter', path: '/airline-helicopter', icon: Plane },
+  { name: 'Tour & Travel', path: '/tour-travel', icon: Map },
+  { name: 'Cabs & Buses', path: '/cabs-buses', icon: Car },
+  { name: 'Airline tickets', path: '/airline-helicopter', icon: Plane },
   { name: 'Forex Exchange', path: '/forex', icon: Banknote },
   { name: 'Cruise Services', path: '/cruise', icon: Ship },
   { name: 'Travel Insurance', path: '/insurance', icon: Shield },
@@ -30,9 +31,9 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-8">
               <Link to="/" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Home</Link>
+              <Link to="/passport-visa" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Passport & Visa</Link>
               <Link to="/train-booking" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Train Booking</Link>
-              <Link to="/tour-travel" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Tour & Travel</Link>
-              <Link to="/cabs-buses" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Cabs & Buses</Link>
+              <Link to="/stories" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">Our Stories</Link>
               
               <div className="relative group">
                 <button 
@@ -86,9 +87,9 @@ export default function Navbar() {
           <div className="max-w-md mx-auto space-y-3">
             {[
               { name: 'Home', path: '/', icon: Map },
+              { name: 'Passport & Visa', path: '/passport-visa', icon: Landmark },
               { name: 'Train Booking', path: '/train-booking', icon: Train },
-              { name: 'Tour & Travel', path: '/tour-travel', icon: Map },
-              { name: 'Cabs & Buses', path: '/cabs-buses', icon: Car },
+              { name: 'Our Stories', path: '/stories', icon: Banknote },
             ].map((item) => (
               <Link key={item.path} to={item.path} onClick={() => setIsOpen(false)} className="flex items-center gap-5 px-6 py-5 rounded-3xl bg-white shadow-sm border border-[var(--color-outline-variant)]/10 text-xl font-bold text-[var(--color-primary)]">
                 <item.icon className="w-6 h-6" />
