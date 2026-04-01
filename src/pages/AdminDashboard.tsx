@@ -15,7 +15,12 @@ export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pin, setPin] = useState('');
   const [stories, setStories] = useState<Story[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
   
+  const ADMIN_STORIES_PER_PAGE = 5;
+
   // Form State
   const [isEditing, setIsEditing] = useState(false);
   const [currentId, setCurrentId] = useState('');
@@ -25,18 +30,23 @@ export default function AdminDashboard() {
   const [content, setContent] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
+  const fetchStories = async () => {
+    try {
+      const res = await fetch(`/api/stories?page=${currentPage}&limit=${ADMIN_STORIES_PER_PAGE}`);
+      const data = await res.json();
+      if (data && Array.isArray(data.stories)) {
+        setStories(data.stories);
+        setTotalPages(data.totalPages || 1);
+        setTotalCount(data.totalCount || 0);
+      }
+    } catch (error) {
+      console.error('Failed to fetch', error);
+    }
+  };
+
   useEffect(() => {
-    fetch('/api/stories?limit=100') // Show more in admin for management
-      .then(res => res.json())
-      .then(data => {
-        if (data && Array.isArray(data.stories)) {
-          setStories(data.stories);
-        } else if (Array.isArray(data)) {
-          setStories(data);
-        }
-      })
-      .catch(console.error);
-  }, []);
+    fetchStories();
+  }, [currentPage]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,13 +75,14 @@ export default function AdminDashboard() {
     setDate(story.date);
     setContent(story.content);
     setImageUrl(story.imageUrl || '');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this story?')) {
       try {
         await fetch(`/api/stories/${id}`, { method: 'DELETE' });
-        setStories(stories.filter(s => s.id !== id));
+        fetchStories(); // Refresh list
       } catch (e) {
         console.error('Failed to delete', e);
       }
@@ -89,8 +100,8 @@ export default function AdminDashboard() {
           body: JSON.stringify({ title, author, date, content, imageUrl })
         });
         if (res.ok) {
-           const updatedStory = await res.json();
-           setStories(stories.map(s => s.id === currentId ? updatedStory : s));
+           fetchStories();
+           resetForm();
         }
       } else {
         const res = await fetch('/api/stories', {
@@ -99,15 +110,14 @@ export default function AdminDashboard() {
           body: JSON.stringify({ title, author, date, content, imageUrl })
         });
         if (res.ok) {
-           const newStory = await res.json();
-           setStories([newStory, ...stories]);
+           setCurrentPage(1); // Go to first page to see new story
+           fetchStories();
+           resetForm();
         }
       }
     } catch (e) {
       console.error('Failed to save', e);
     }
-    
-    resetForm();
   };
 
   if (!isAuthenticated) {
@@ -204,26 +214,51 @@ export default function AdminDashboard() {
                      <p className="text-xl text-[var(--color-on-surface-variant)] italic font-serif">No stories published yet.</p>
                   </div>
                ) : (
-                 stories.map(story => (
-                    <div key={story.id} className="bg-white p-6 rounded-[2rem] border border-[var(--color-outline-variant)]/10 shadow-sm flex flex-col sm:flex-row gap-6 items-center hover:shadow-md transition-shadow">
-                       {story.imageUrl && (
-                          <img src={story.imageUrl} alt="Thumbnail" className="w-24 h-24 object-cover rounded-xl" />
-                       )}
-                       <div className="flex-1">
-                          <h4 className="text-xl font-bold text-[var(--color-primary)] mb-1">{story.title}</h4>
-                          <p className="text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">{story.author} • {story.date}</p>
-                          <p className="text-[var(--color-on-surface-variant)] italic font-serif text-sm line-clamp-2">"{story.content}"</p>
-                       </div>
-                       <div className="flex sm:flex-col gap-2">
-                          <button onClick={() => handleEdit(story)} className="p-3 bg-[var(--color-surface)] text-[var(--color-primary)] rounded-xl hover:bg-[var(--color-primary-container)] transition-colors">
-                             <Edit3 className="w-5 h-5" />
-                          </button>
-                          <button onClick={() => handleDelete(story.id)} className="p-3 bg-red-50 text-red-500 rounded-xl hover:bg-red-100 transition-colors">
-                             <Trash2 className="w-5 h-5" />
-                          </button>
-                       </div>
-                    </div>
-                 ))
+                 <div className="space-y-4">
+                   {stories.map(story => (
+                      <div key={story.id} className="bg-white p-6 rounded-[2rem] border border-[var(--color-outline-variant)]/10 shadow-sm flex flex-col sm:flex-row gap-6 items-center hover:shadow-md transition-shadow">
+                         {story.imageUrl && (
+                            <img src={story.imageUrl} alt="Thumbnail" className="w-24 h-24 object-cover rounded-xl" />
+                         )}
+                         <div className="flex-1">
+                            <h4 className="text-xl font-bold text-[var(--color-primary)] mb-1">{story.title}</h4>
+                            <p className="text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">{story.author} • {story.date}</p>
+                            <p className="text-[var(--color-on-surface-variant)] italic font-serif text-sm line-clamp-2">"{story.content}"</p>
+                         </div>
+                         <div className="flex sm:flex-col gap-2">
+                            <button onClick={() => handleEdit(story)} className="p-3 bg-[var(--color-surface)] text-[var(--color-primary)] rounded-xl hover:bg-[var(--color-primary-container)] transition-colors">
+                               <Edit3 className="w-5 h-5" />
+                            </button>
+                            <button onClick={() => handleDelete(story.id)} className="p-3 bg-red-50 text-red-500 rounded-xl hover:bg-red-100 transition-colors">
+                               <Trash2 className="w-5 h-5" />
+                            </button>
+                         </div>
+                      </div>
+                   ))}
+
+                   {/* Pagination UI */}
+                   {totalCount > ADMIN_STORIES_PER_PAGE && (
+                      <div className="pt-10 flex flex-col items-center">
+                         <p className="text-sm text-[var(--color-on-surface-variant)] mb-4 font-serif italic">
+                            Showing page {currentPage} of {totalPages} ({totalCount} total stories)
+                         </p>
+                         <div className="flex gap-2">
+                            {Array.from({ length: totalPages }).map((_, idx) => (
+                               <button
+                                 key={idx}
+                                 onClick={() => {
+                                   setCurrentPage(idx + 1);
+                                   window.scrollTo({ top: 0, behavior: 'smooth' });
+                                 }}
+                                 className={`w-10 h-10 rounded-xl font-bold flex items-center justify-center transition-all ${currentPage === idx + 1 ? 'bg-[var(--color-primary)] text-white shadow-lg scale-110' : 'bg-white text-[var(--color-primary)] hover:bg-[var(--color-primary-container)] border border-[var(--color-outline-variant)]/10'}`}
+                               >
+                                 {idx + 1}
+                               </button>
+                            ))}
+                         </div>
+                      </div>
+                   )}
+                 </div>
                )}
             </div>
          </div>

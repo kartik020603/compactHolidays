@@ -38,7 +38,7 @@ export default function OurStories() {
   const [totalCount, setTotalCount] = useState(0);
   const [expandedStoryId, setExpandedStoryId] = useState<string | null>(null);
   
-  const STORIES_PER_PAGE = 5;
+  const STORIES_PER_PAGE = 3;
 
   useEffect(() => {
     setLoading(true);
