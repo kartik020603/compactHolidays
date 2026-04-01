@@ -8,10 +8,11 @@ import { Helmet } from 'react-helmet-async';
 import heroGoa from '../assets/generated/home_hero_goa_1774982106174.png';
 import heroTrain from '../assets/generated/home_hero_train_1774982124786.png';
 import heroFlight from '../assets/generated/home_hero_flight_1774982142469.png';
+import heroVisa from '../assets/generated/home_hero_visa.png';
 
 const HERO_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1544320641-5a5061b4db53?auto=format&fit=crop&w=1200&q=80",
+    url: heroVisa,
     title: "Expert Visa Services",
     subtitle: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai."
   },
