@@ -1,9 +1,10 @@
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 export default function ContactFAB() {
   const phoneNumber = "918410617268";
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
+  const whatsappUrl = getWhatsAppUrl("Hi Compact Holidays, I need a quick quote for your premium services.");
   const callUrl = `tel:+${phoneNumber}`;
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Plane, Train, Map, Car, Landmark, Banknote, Ship, Shield, ChevronDown } from 'lucide-react';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const OTHER_SERVICES = [
   { name: 'Tour & Travel', path: '/tour-travel', icon: Map },
@@ -65,7 +66,17 @@ export default function Navbar() {
               </div>
 
               <Link to="/about" className="text-[var(--color-on-surface)] hover:text-[var(--color-primary)] font-medium transition-colors">About</Link>
-              <Link to="/reviews" className="px-6 py-2 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-bold rounded-xl border border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-sm active:scale-95">Reviews</Link>
+              <div className="flex items-center gap-3">
+                <Link to="/reviews" className="px-5 py-2 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-bold rounded-xl border border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-sm active:scale-95">Reviews</Link>
+                <a 
+                  href={getWhatsAppUrl("Hi Compact Holidays, I'd like to Book a Slot for your services.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2 bg-[var(--color-primary)] text-white font-bold rounded-xl hover:bg-[var(--color-primary-dim)] transition-all shadow-md active:scale-95 whitespace-nowrap"
+                >
+                  Book Your Slot Now
+                </a>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,7 +131,16 @@ export default function Navbar() {
 
             <div className="pt-12 space-y-4">
               <Link to="/about" onClick={() => setIsOpen(false)} className="block px-6 py-5 text-center font-bold text-[var(--color-primary)] bg-[var(--color-primary-container)]/20 rounded-[2rem] border border-[var(--color-primary)]/10">About Compact Holidays</Link>
-              <Link to="/reviews" onClick={() => setIsOpen(false)} className="block px-6 py-6 text-center font-bold text-white bg-[var(--color-primary)] rounded-[2rem] shadow-2xl shadow-[var(--color-primary)]/30 text-lg">Read Guest Reviews</Link>
+              <div className="grid grid-cols-2 gap-3">
+                <Link to="/reviews" onClick={() => setIsOpen(false)} className="block py-5 text-center font-bold text-[var(--color-accent)] bg-[var(--color-accent)]/10 rounded-[2rem] border border-[var(--color-accent)]/20">Guest Reviews</Link>
+                <a 
+                  href={getWhatsAppUrl("Hi Compact Holidays, I'd like to Book a Slot for your services.")}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-5 text-center font-bold text-white bg-[var(--color-primary)] rounded-[2rem] shadow-xl"
+                >
+                  Book Slot
+                </a>
+              </div>
             </div>
           </div>
         </div>

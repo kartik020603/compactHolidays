@@ -1,6 +1,7 @@
 import { Users, Globe, ShieldCheck, Landmark } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import tajDetail from '../assets/generated/about_taj_detail_1774982695326_1774984286135.png';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 export default function AboutUs() {
   return (
@@ -116,9 +117,16 @@ export default function AboutUs() {
                  <p className="text-xl text-[var(--color-on-surface-variant)] mb-10 leading-loose">Based in the heart of the business district, we invite you to discuss your next grand expedition in person.</p>
                  <div className="space-y-4 mb-10">
                     <p className="text-lg font-bold text-[var(--color-primary)] uppercase tracking-widest">Office Address</p>
-                    <p className="text-xl leading-relaxed text-gray-600">Shop No 5, New Market, Agra, Uttar Pradesh - 282001</p>
+                    <a 
+                      href="https://www.google.com/maps?ll=27.185653,78.005345&z=10&t=m&hl=en-US&gl=US&mapclient=embed&q=Opp.+SBI+ATM+Gailana+Road,+Agra"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl leading-relaxed text-gray-600 hover:text-[var(--color-primary)] transition-colors"
+                    >
+                      Opp. SBI ATM Gailana Road, Agra, Uttar Pradesh - 282001
+                    </a>
                  </div>
-                 <a href="https://wa.me/918410617268" className="inline-flex items-center gap-4 px-12 py-5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dim)] text-white rounded-2xl font-bold text-lg transition-all shadow-xl">WhatsApp Our Office</a>
+                 <a href={getWhatsAppUrl("Hi Compact Holidays, I'd like to Book a Slot for your services.")} className="inline-flex items-center gap-4 px-12 py-5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dim)] text-white rounded-2xl font-bold text-lg transition-all shadow-xl">Book Your Slot Now</a>
               </div>
            </div>
          </FadeIn>

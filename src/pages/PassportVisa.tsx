@@ -1,5 +1,6 @@
-import { Globe, CheckCircle2, ShieldAlert, FileCheck, Truck, Zap, Activity, Clock } from 'lucide-react';
+import { Globe, ShieldAlert, Zap, Activity, Clock, GraduationCap } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
+import { getWhatsAppUrl, getServiceInquiry } from '../utils/whatsapp';
 import imgPassport from '../assets/generated/passport_processing_document_aesthetic_1774982380927.png';
 
 export default function PassportVisa() {
@@ -18,65 +19,97 @@ export default function PassportVisa() {
           </FadeIn>
           <FadeIn delay={0.4}>
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-[0.95]">
-              Seamless <br /><span className="text-[var(--color-primary-container)]">Visa Services</span>
+              Visa in <span className="text-[var(--color-primary-container)]">7 Days</span>
             </h1>
+            <p className="text-2xl md:text-3xl text-[var(--color-accent)] font-black mb-10 tracking-widest uppercase">Guaranteed Assistance</p>
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-lg md:text-2xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-              Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai. We handle the complex documentation so you can focus on packing. Aapka apna travel partner.
+              Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai. Specializing in <span className="text-white font-bold underline">Student Visas</span> & Express processing.
             </p>
+            <div className="flex flex-wrap justify-center gap-6">
+               <a 
+                 href={getWhatsAppUrl(getServiceInquiry('Visa', '', 'student'))}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="px-10 py-5 bg-[var(--color-accent)] text-white font-bold rounded-2xl text-lg shadow-2xl hover:bg-[#20ba59] transition-all hover:-translate-y-1"
+               >
+                 Book Student Slot Now
+               </a>
+               <a 
+                 href={getWhatsAppUrl(getServiceInquiry('Urgent Visa'))}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="px-10 py-5 glass text-white font-bold rounded-2xl text-lg border border-white/20 hover:bg-white/10 transition-all"
+               >
+                 Get Expert Quote (2 min response)
+               </a>
+            </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* 2. The Narrative Section - Asymmetrical Layout */}
-      <section className="py-32 bg-white rounded-[4rem] -mt-10 relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="flex flex-col lg:flex-row gap-20 items-center">
-              <div className="lg:w-1/2">
-                <FadeIn direction="right">
-                   <h2 className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-8 leading-tight">Expert Consulting for <span className="text-[var(--color-secondary)]">155+ Countries</span></h2>
-                   <p className="text-xl text-[var(--color-on-surface-variant)] mb-10 leading-loose italic font-serif">"Our mission is simple: provide the <strong className="text-[var(--color-primary)]">best passport applying services in Agra</strong>. Embassy ke chakkar chodiye, files hum par chhodiye. Humare 10 saal ke experience pe bharosa rakhein."</p>
-                   <div className="grid grid-cols-2 gap-8 pt-6">
+      {/* 2. Student Special Section */}
+      <section className="py-32 bg-[var(--color-primary)] text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-accent)]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <FadeIn>
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter">Student <span className="text-[var(--color-accent)]">Study Abroad</span> Specialists</h2>
+              <p className="text-xl text-white/70 max-w-2xl mx-auto">Preferred partner for students flying from Delhi/UP to global universities.</p>
+            </FadeIn>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { country: 'USA', desc: 'F1/J1 Visa Interview slots and documentation.', flag: '🇺🇸', price: '₹4,999*' },
+              { country: 'UK', desc: 'Student CAS verification and Priority visa assistance.', flag: '🇬🇧', price: '₹3,999*' },
+              { country: 'Canada', desc: 'SDS & Non-SDS Category application experts.', flag: '🇨🇦', price: '₹3,999*' },
+              { country: 'Europe', desc: 'Schengen student & internship visa filing.', flag: '🇪🇺', price: '₹2,999*' },
+            ].map((s, i) => (
+              <FadeIn key={i} delay={0.1 * i} direction="up">
+                <div className="p-8 bg-white/5 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-all group">
+                  <div className="text-5xl mb-6">{s.flag}</div>
+                  <h4 className="text-2xl font-bold mb-2">{s.country} Student Visa</h4>
+                  <p className="text-white/60 text-sm mb-6">{s.desc}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[var(--color-accent)] font-black text-xl">{s.price}</span>
+                    <a 
+                      href={getWhatsAppUrl(getServiceInquiry(`${s.country} Student Visa`, s.country, 'student'))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white text-[var(--color-primary)] rounded-xl group-hover:scale-110 transition-transform"
+                    >
+                      <Zap className="w-5 h-5 fill-current" />
+                    </a>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <div className="mt-20 text-center">
+             <FadeIn delay={0.5}>
+                <div className="inline-flex flex-col md:flex-row items-center gap-8 p-8 bg-white/5 rounded-[3rem] border border-white/10">
+                   <div className="flex items-center gap-4 text-left">
+                      <div className="w-16 h-16 bg-[var(--color-accent)] rounded-full flex items-center justify-center"><GraduationCap className="w-8 h-8 text-white" /></div>
                       <div>
-                        <h4 className="text-4xl font-bold text-[var(--color-accent)] mb-2">98%</h4>
-                        <p className="text-sm font-bold text-[var(--color-primary)] uppercase tracking-widest">Visa Success Rate</p>
-                      </div>
-                      <div>
-                        <h4 className="text-4xl font-bold text-[var(--color-accent)] mb-2">10+</h4>
-                        <p className="text-sm font-bold text-[var(--color-primary)] uppercase tracking-widest">Years Expertise</p>
+                         <p className="font-bold text-xl line-through text-white/40">Regular Price: ₹9,999</p>
+                         <p className="font-black text-3xl text-[var(--color-accent)] tracking-tighter">Student Price: ₹1,999*</p>
                       </div>
                    </div>
-                </FadeIn>
-              </div>
-
-              <div className="lg:w-1/2 grid grid-cols-1 gap-6">
-                 {[
-                   { icon: FileCheck, title: 'Application Process', desc: 'Error-free filing of application forms. We ensure every detail matches embassy requirements precisely.', list: ['Form Verification', 'Slot Booking'] },
-                   { icon: Truck, title: 'Doc Collection', desc: 'Doorstep pickup and secure handling of sensitive documents. We curate your dossier to maximize approval.', list: ['Personal Concierge', 'Safe Transport'] },
-                   { icon: Zap, title: 'Fast-Track Visa', desc: 'Urgent travel needs require urgent solutions. Our premium channels expedite the processing time.', list: ['Priority Processing', 'Real-time Tracking'] }
-                 ].map((box, i) => (
-                   <FadeIn key={i} delay={0.2 * i} direction="left">
-                      <div className="p-10 bg-[var(--color-surface-container-low)] rounded-[3rem] border border-white hover:shadow-2xl transition-all duration-500 overflow-hidden relative">
-                         <div className="flex gap-6 items-start mb-6">
-                             <div className="bg-white p-4 rounded-2xl shadow-sm"><box.icon className="w-8 h-8 text-[var(--color-primary)]"/></div>
-                             <div>
-                               <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-2">{box.title}</h3>
-                               <p className="text-[var(--color-on-surface-variant)] leading-relaxed">{box.desc}</p>
-                             </div>
-                         </div>
-                         <div className="flex gap-4">
-                            {box.list.map((l, j) => (
-                               <span key={j} className="flex items-center gap-2 text-xs font-bold text-[var(--color-primary)] bg-white/50 px-4 py-2 rounded-full border border-white">
-                                  <CheckCircle2 className="w-4 h-4 text-[var(--color-accent)]"/> {l}
-                               </span>
-                            ))}
-                         </div>
-                      </div>
-                   </FadeIn>
-                 ))}
-              </div>
-           </div>
+                   <div className="h-12 w-px bg-white/10 hidden md:block" />
+                   <a 
+                    href={getWhatsAppUrl(getServiceInquiry('Student Discount Offer', '', 'student'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-10 py-5 bg-white text-[var(--color-primary)] font-bold rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-xl"
+                   >
+                     Claim Student Discount Now
+                   </a>
+                </div>
+             </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -161,9 +194,16 @@ export default function PassportVisa() {
                <div className="bg-[var(--color-primary)] p-16 rounded-[4rem] text-white shadow-2xl relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <Clock className="w-16 h-16 text-[var(--color-accent)] mb-8" />
-                  <h3 className="text-4xl font-bold mb-6 tracking-tight">Need it Urgently?</h3>
-                  <p className="text-xl text-white/70 mb-10 leading-relaxed">Tatkal visa ya urgent passport? Tension mat lijiye. Our executive channel cuts processing time down significantly for emergencies.</p>
-                  <a href="https://wa.me/918410617268" className="inline-block px-12 py-6 bg-white text-[var(--color-primary)] font-bold rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-xl">Contact Visa Concierge</a>
+                  <h3 className="text-4xl font-bold mb-6 tracking-tight">Visa in 7 Days?</h3>
+                  <p className="text-xl text-white/70 mb-10 leading-relaxed">Tatkal visa ya urgent passport? Tension mat lijiye. Our executive channel cuts processing time down significantly with <span className="text-white font-bold">100% Guaranteed Assistance</span>.</p>
+                  <a 
+                    href={getWhatsAppUrl(getServiceInquiry('Urgent Visa Concierge'))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-12 py-6 bg-white text-[var(--color-primary)] font-bold rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-xl"
+                  >
+                    Contact Visa Concierge (2 min response)
+                  </a>
                </div>
             </FadeIn>
          </div>

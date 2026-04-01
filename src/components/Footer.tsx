@@ -41,11 +41,18 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div>
-            <h3 className="text-white font-semibold mb-6">Contact Us</h3>
+            <h3 className="text-white font-semibold mb-6">Book Your Slot Now</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[var(--color-primary-fixed)] flex-shrink-0 mt-0.5" />
-                <span className="text-[var(--color-primary-container)] text-sm leading-relaxed">Shop No 5, New Market<br/>Agra, Uttar Pradesh 282001</span>
+                <a 
+                  href="https://www.google.com/maps?ll=27.185653,78.005345&z=10&t=m&hl=en-US&gl=US&mapclient=embed&q=Opp.+SBI+ATM+Gailana+Road,+Agra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--color-primary-container)] text-sm leading-relaxed hover:text-white transition-colors"
+                >
+                  Opp. SBI ATM Gailana Road<br/>Agra, Uttar Pradesh 282001
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[var(--color-primary-fixed)] flex-shrink-0" />

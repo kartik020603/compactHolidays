@@ -3,6 +3,18 @@ import prisma from '../lib/prisma.js';
 export default async function handler(req, res) {
   const { id } = req.query;
 
+  if (req.method === 'GET') {
+    try {
+      const story = await prisma.story.findUnique({
+        where: { id: String(id) },
+      });
+      if (!story) return res.status(404).json({ error: 'Story not found' });
+      return res.status(200).json(story);
+    } catch (error) {
+      return res.status(500).json({ error: 'Failed to fetch story' });
+    }
+  }
+
   if (req.method === 'DELETE') {
     try {
       await prisma.story.delete({

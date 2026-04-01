@@ -1,5 +1,6 @@
-import { Train, Clock, CheckCircle2, Search, ShieldCheck, Zap, Activity } from 'lucide-react';
+import { Train, Clock, CheckCircle2, Search, ShieldCheck, Zap, Activity, ShieldAlert } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
+import { getWhatsAppUrl, getServiceInquiry } from '../utils/whatsapp';
 import heroTrain from '../assets/generated/train_hero_modern_1774982179196.png';
 import trainInterior from '../assets/generated/train_interior_luxury_1774982212585.png';
 import trainRoute from '../assets/generated/train_route_scenic_1774982231233.png';
@@ -29,8 +30,21 @@ export default function TrainBooking() {
           </FadeIn>
           <FadeIn delay={0.6}>
             <p className="text-xl md:text-2xl text-[var(--color-primary-container)] max-w-2xl mx-auto font-light leading-relaxed mb-12">
-              Aapki confirmed seat ki guarantee, humari zimmedari. From luxury Vande Bharat to urgent Tatkal assistance, we are the <strong className="text-white">best train booking services in Agra</strong>.
+              Aapki confirmed seat ki guarantee, humari zimmedari. Book with <span className="text-white font-bold underline">Next-Level Assurance</span>.
             </p>
+            <div className="flex flex-wrap justify-center gap-6">
+               <a 
+                 href={getWhatsAppUrl(getServiceInquiry('Train Booking'))}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="px-10 py-5 bg-[var(--color-accent)] text-white font-bold rounded-2xl text-lg shadow-2xl hover:bg-[#20ba59] transition-all hover:-translate-y-1"
+               >
+                 Get Confirmed Seat Quote
+               </a>
+               <div className="px-8 py-5 glass text-white font-bold rounded-2xl text-lg border border-white/20 whitespace-nowrap">
+                 Starting ₹99* <span className="opacity-40 ml-2">|</span> <span className="text-[var(--color-accent)] ml-2">100% Secure</span>
+               </div>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -167,38 +181,20 @@ export default function TrainBooking() {
         </div>
       </section>
       {/* 4. Trust Summary - Stitch Pillar */}
-      <section className="py-32 max-w-7xl mx-auto px-4 text-center">
-        <FadeIn>
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-[var(--color-primary)] mb-4">Unmatched Reliability</h3>
-            <p className="text-[var(--color-on-surface-variant)] max-w-2xl mx-auto text-lg leading-relaxed">
-              Authorized travel partner with 10+ years of ticketing expertise. We manage the complexity, you enjoy the scenery.
-            </p>
-          </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <FadeIn direction="right" delay={0.2}>
-            <div className="flex gap-6 items-center p-8 bg-white rounded-3xl border border-[var(--color-surface-container)] text-left group hover:bg-[var(--color-primary)] transition-all duration-300">
-               <div className="bg-[var(--color-primary-container)] p-4 rounded-2xl group-hover:bg-white transition-colors"><Clock className="w-8 h-8 text-[var(--color-primary)]"/></div>
-               <div>
-                  <h4 className="font-bold text-xl text-[var(--color-primary)] group-hover:text-white mb-1">24/7 Concierge Support</h4>
-                  <p className="text-sm text-[var(--color-on-surface-variant)] group-hover:text-white/80">Late-night PNR checks or emergency rerouting.</p>
-               </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn direction="left" delay={0.4}>
-            <div className="flex gap-6 items-center p-8 bg-white rounded-3xl border border-[var(--color-surface-container)] text-left group hover:bg-[var(--color-primary)] transition-all duration-300">
-               <div className="bg-[var(--color-primary-container)] p-4 rounded-2xl group-hover:bg-white transition-colors"><Zap className="w-8 h-8 text-[var(--color-primary)]"/></div>
-               <div>
-                  <h4 className="font-bold text-xl text-[var(--color-primary)] group-hover:text-white mb-1">Fast Bookings</h4>
-                  <p className="text-sm text-[var(--color-on-surface-variant)] group-hover:text-white/80">Confirmed in minutes, not hours. Speed is our standard.</p>
-               </div>
-            </div>
-          </FadeIn>
+        <div className="bg-[var(--color-primary)] p-16 rounded-[4rem] text-white shadow-2xl relative overflow-hidden mt-20 max-w-4xl mx-auto">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <ShieldAlert className="w-16 h-16 text-[var(--color-accent)] mb-8" />
+          <h3 className="text-4xl font-bold mb-6 tracking-tight">Confirmed Seat Guarantee</h3>
+          <p className="text-xl text-white/70 mb-10 leading-relaxed">Waitlist ki tension chodiye. Our expert confirmation hunters ensure you get the seat you need, when you need it.</p>
+          <a 
+            href={getWhatsAppUrl(getServiceInquiry('Urgent Rail Booking'))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-12 py-6 bg-white text-[var(--color-primary)] font-bold rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all shadow-xl"
+          >
+            Book My Seat Now (2 min response)
+          </a>
         </div>
-      </section>
 
     </div>
   );

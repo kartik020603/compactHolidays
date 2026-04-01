@@ -4,6 +4,7 @@ import { Shield, Clock, Award, Star, ArrowRight, Train, Car, Map, Landmark, Plan
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import { Helmet } from 'react-helmet-async';
+import { getWhatsAppUrl, getServiceInquiry } from '../utils/whatsapp';
 
 import heroGoa from '../assets/generated/home_hero_goa_1774982106174.png';
 import heroTrain from '../assets/generated/home_hero_train_1774982124786.png';
@@ -13,35 +14,35 @@ import heroVisa from '../assets/generated/home_hero_visa.png';
 const HERO_IMAGES = [
   {
     url: heroVisa,
-    title: "Expert Visa Services",
-    subtitle: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai."
+    title: "Visa in 7 Days",
+    subtitle: "Guaranteed Assistance for Students & Professionals. Special rates starting ₹1,999*. Jo passport kahin nahi ban pate, humara staff banwa kar deta hai."
   },
   {
     url: heroTrain,
-    title: "Assured Rail Journeys",
-    subtitle: "Aapki confirmed seat ki guarantee, humari zimmedari."
+    title: "Confirmed Rail Seats",
+    subtitle: "Aapki confirmed seat ki guarantee, humari zimmedari. Book with next-level assurance."
   },
   {
     url: heroFlight,
-    title: "Global Horizons",
-    subtitle: "Duniya ki kisi bhi kone ki flight, humare saath book karein."
+    title: "Flat ₹500 Off",
+    subtitle: "On your first international flight booking. Student special discounts available."
   },
   {
     url: heroGoa,
-    title: "Apna Sa Safar",
-    subtitle: "Memorable holidays curated with care and deep trust (apnapan)."
+    title: "Premium Holidays",
+    subtitle: "Memorable holidays curated with care and deep trust (apnapan) starting from ₹9,999*."
   }
 ];
 
 const SERVICES = [
-  { title: "Passport & Visa", icon: Landmark, path: "/passport-visa", desc: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai. Fast-track assistance." },
-  { title: "Train Booking", icon: Train, path: "/train-booking", desc: "Aapki confirmed seat ki guarantee, humari zimmedari. Express Tatkal & Luxury reservations." },
-  { title: "Tour & Travel", icon: Map, path: "/tour-travel", desc: "Apno ke saath banayein yaadgaar safar. Agra Signature Tours & Bespoke Global Itineraries." },
-  { title: "Cabs & Buses", icon: Car, path: "/cabs-buses", desc: "Safar suhana, aur kiraya bhi apna sa. Elite intercity chauffeurs and luxury bus charters." },
-  { title: "Forex Exchange", icon: Coins, path: "/forex", desc: "Sahi rates pe instant currency exchange. Bharose ka doosra naam Compact Holidays." },
-  { title: "Airline Tickets", icon: Plane, path: "/airline-helicopter", desc: "First-class flight bookings, private charters, and helicopter expeditions." },
-  { title: "Travel Insurance", icon: HeartPulse, path: "/travel-insurance", desc: "Medical emergencies hone par humesha aapke sath. Comprehensive protection." },
-  { title: "Cruise Services", icon: Ship, path: "/cruise", desc: "Elite maritime voyages from the Arabian sea to the Caribbean horizons." },
+  { title: "Passport & Visa", icon: Landmark, path: "/passport-visa", desc: "Jo passport kahin nahi ban pate, humara expert staff banwa kar deta hai.", price: "Starting ₹1,999*", assurance: "98% Success Rate" },
+  { title: "Train Booking", icon: Train, path: "/train-booking", desc: "Aapki confirmed seat ki guarantee, humari zimmedari. Express Tatkal specialist.", price: "Starting ₹99*", assurance: "Confirmed Seat Guarantee" },
+  { title: "Tour & Travel", icon: Map, path: "/tour-travel", desc: "Apno ke saath banayein yaadgaar safar. Agra Signature Tours.", price: "Starting ₹4,999*", assurance: "100% Custom Itinerary" },
+  { title: "Cabs & Buses", icon: Car, path: "/cabs-buses", desc: "Safar suhana, aur kiraya bhi apna sa. Elite intercity chauffeurs.", price: "Starting ₹1,499*", assurance: "Verified Drivers Daily" },
+  { title: "Forex Exchange", icon: Coins, path: "/forex", desc: "Sahi rates pe instant currency exchange. Bharose ka doosra naam.", price: "Best Rates*", assurance: "RBI Authorized Service" },
+  { title: "Airline Tickets", icon: Plane, path: "/airline-helicopter", desc: "First-class flight bookings, private charters, and helicopter expeditions.", price: "Starting ₹2,499*", assurance: "No Hidden Convenience Fee" },
+  { title: "Travel Insurance", icon: HeartPulse, path: "/travel-insurance", desc: "Medical emergencies hone par humesha aapke sath. Comprehensive protection.", price: "Starting ₹499*", assurance: "Instant Policy Issuance" },
+  { title: "Cruise Services", icon: Ship, path: "/cruise", desc: "Elite maritime voyages from the Arabian sea to the Caribbean horizons.", price: "Starting ₹14,990*", assurance: "Luxury Cabin Guarantee" },
 ];
 
 export default function Home() {
@@ -94,11 +95,16 @@ export default function Home() {
               "{HERO_IMAGES[currentHero].subtitle}"
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Link to="/tour-travel" className="bg-[var(--color-accent)] hover:bg-[#20ba59] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-2">
-                Explore Signature Tours <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link to="/about" className="glass text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all border border-white/20 hover:bg-white/10 text-center">
-                Our Story
+              <a 
+                href={getWhatsAppUrl(currentHero === 0 ? getServiceInquiry('Visa', '', 'student') : getServiceInquiry(HERO_IMAGES[currentHero].title))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[var(--color-accent)] hover:bg-[#20ba59] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-2"
+              >
+                Get Quote on WhatsApp (2 min response) <ArrowRight className="w-5 h-5" />
+              </a>
+              <Link to="/passport-visa" className="glass text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all border border-white/20 hover:bg-white/10 text-center">
+                Visa in 7 Days
               </Link>
             </div>
           </motion.div>
@@ -134,18 +140,25 @@ export default function Home() {
                    <service.icon className="w-10 h-10 text-[var(--color-primary)]" />
                 </div>
                 <h3 className="text-3xl font-bold text-[var(--color-primary)] group-hover:text-white mb-4 tracking-tighter leading-tight">{service.title}</h3>
-                <p className="text-[var(--color-on-surface-variant)] group-hover:text-white/70 mb-8 leading-relaxed font-light text-lg">{service.desc}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                   <span className="bg-[var(--color-primary-container)] group-hover:bg-white group-hover:text-[var(--color-primary)] text-[var(--color-primary)] text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">{service.price}</span>
+                   <span className="bg-[var(--color-accent)]/10 group-hover:bg-white/20 text-[var(--color-accent)] group-hover:text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-[var(--color-accent)]/20">Next-Level Assurance</span>
+                </div>
+                <p className="text-[var(--color-on-surface-variant)] group-hover:text-white/70 mb-8 leading-relaxed font-light text-lg">
+                  {service.desc} <br />
+                  <span className="font-bold text-[var(--color-accent)] group-hover:text-white mt-2 block italic">✓ {service.assurance}</span>
+                </p>
                 <div className="flex items-center gap-6">
                    <Link to={service.path} className="flex items-center gap-2 text-[var(--color-primary)] group-hover:text-[var(--color-primary-container)] font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all">
-                      Learn More <ArrowRight className="w-4 h-4" />
+                      Details <ArrowRight className="w-4 h-4" />
                    </Link>
                    <a 
-                     href={`https://wa.me/918410617268?text=I'm%20interested%20in%20${service.title}%20service.`} 
+                     href={getWhatsAppUrl(getServiceInquiry(service.title))} 
                      target="_blank" 
                      rel="noopener noreferrer"
                      className="px-6 py-3 bg-[var(--color-accent)] group-hover:bg-white group-hover:text-[var(--color-primary)] text-white font-bold rounded-2xl text-[10px] uppercase tracking-widest transition-all shadow-md active:scale-95"
                    >
-                      Book Now
+                      Get Quote on WhatsApp
                    </a>
                 </div>
               </div>
